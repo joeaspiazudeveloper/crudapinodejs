@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const productRoute = require('./routes/product.route.js');
+const cors = require('cors');
 const app = express();
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 
 // routes
 app.use('/api/products', productRoute);
